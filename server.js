@@ -22,7 +22,8 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-app.use('/api/v1/stores', require('./routes/stores'));
+// app.use('/api/v1/stores', require('./routes/stores'));
+app.use('/.netlify/functions/api', require('./routes/stores'));
 
 const PORT = process.env.PORT || 5000;
 
