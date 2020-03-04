@@ -1,5 +1,7 @@
+'use strict';
 const express = require('express');
 const { getStores, addStore } = require('../controllers/stores');
+const serverless = require('serverless-http');
 
 const router = express.Router();
 
@@ -9,4 +11,4 @@ router
   .post(addStore);
 
 
-module.exports = router;
+module.exports.handler = serverless(router);
